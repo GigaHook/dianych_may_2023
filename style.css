@@ -1,0 +1,45 @@
+.root{
+  --bg: #ECDCE1;
+}
+body{
+  background-color: #F8FAFE;
+  min-height: 100vh;
+  padding: 100px 0 100px 0;
+}
+.top, .bot{
+  min-height:100px;
+  z-index: -1;
+  position: absolute;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+}
+.top{
+  top: 0;
+  background-image: url("assets/resources/bg-top.jpeg"); 
+  background-position: bottom center; 
+}
+.bot{
+  bottom: 0;
+  background-image: url("assets/resources/bg-bot.jpeg"); 
+  background-position: top center; 
+}
+@font-face {
+  font-family: 'WellwaitFree';
+  src: url(assets/fonts/wellwaitfree_regular.otf);
+}
+header{
+  font-family: 'WellwaitFree';
+  background: linear-gradient(to right, 
+    red, orange, yellow, green, blue, indigo, violet
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.normal-font{
+  font-family: Arial, Helvetica, sans-serif;
+}
+footer{
+  position: absolute;
+  bottom: 120px;
+}
