@@ -2,7 +2,7 @@
 
 require_once 'db.php';
 
-if (!isset($_SESSION)) session_start();
+session_start();
 
 if (isset($_GET['logout'])) {
   session_destroy();
@@ -23,7 +23,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) {
   $title = $_POST['title'];
   $text = $_POST['text'];
-  $date = date('m/d/Y h:i:s a', time());
+  $date = date('m/d/Y', time());
   $image = $_FILES["image"];
   $destination = 'assets/uploads/';
   $imageName = $image["name"];
@@ -33,6 +33,7 @@ if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) 
   $query = "INSERT INTO posts (title, text, image, date) VALUES ('$title', '$text', '$imageDestination', '$date')";
   $result = mysqli_query($con, $query);
   if (!$result) die("Ошибка выполнения запроса: " . mysqli_error($con));
+  $added = 1;
   mysqli_close($con);
 }
 
@@ -128,7 +129,7 @@ if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) 
     <div class="row justify-content-center">
       <? if(!isset($_SESSION['email'])): ?>
         
-        <form method="post" class="col-8">
+        <form method="post" class="col-8 border rounded p-3 m-3">
           <h3>Войдите в аккаунт</h3>
           <div class="mb-3">
             <label for="email" class="form-label">Почта</label>
@@ -142,11 +143,19 @@ if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) 
 
           <button type="submit" class="btn btn-warning">Войти</button>
         </form>
-        <div class="col-8 text-secondary mt-3">*Это страница предназначина для управления сайтом. Если вы не являетесь администратором, пожалуйста, покиньте её.</div>
+
+        <div class="col-8 text-secondary">*Это страница предназначина для управления сайтом. Если вы не являетесь администратором, пожалуйста, покиньте её.</div>
+
+        <? if (isset($error)): ?>
+          <script>
+            alert(<?= $error ?>)
+          </script>
+          <? unset($error); ?>
+        <? endif; ?>
 
       <? else: ?>
 
-        <form method="post" class="col-8" enctype="multipart/form-data">
+        <form method="post" class="col-8 border rounded p-3 m-3" enctype="multipart/form-data">
           <h3>Добавление новости</h3>
           <div class="mb-3">
             <label for="title" class="form-label">Заголовок</label>
@@ -163,7 +172,18 @@ if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) 
             <input type="file" name="image" class="form-control" required accept=".png,.jpg,.jpeg">  
           </div>
 
-          <button type="submit" class="btn btn-warning mb-3">Добавить</button>
+          <button type="submit" class="btn btn-warning">Добавить</button>
+        </form>
+
+        <? if(isset($added)): ?>
+          <script>
+            alert('Новость <?= $_POST['title'] ?> добавлена')
+          </script>
+          <? unset($added); ?>
+        <? endif; ?>    
+
+        <form method="GET">
+          <button type="submit" name="logout" class="btn btn-warning mb-3">Выйти из аккаунта</button>
         </form>
         
       <? endif; ?>
