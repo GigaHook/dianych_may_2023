@@ -12,7 +12,6 @@
 <body class="position-relative">
   
   <div class="top w-100"></div>
-  <div class="bot w-100"></div>
 
   <header class="container">
     <div class="row justify-space-between">
@@ -30,64 +29,121 @@
     </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary container">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Главная</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="news.php">Новости</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="education.php">Образование</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link active" href="head.php">Руководство</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="provision.php">Обеспечение</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="service.php">Платные услуги</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="admission.php">Условия поступления</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="achievements.php">Наши достижения</a>
-      </li>
-
-      <? if(isset($_SESSION['email'])): ?>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <ul class="me-auto mb-2 mb-lg-0 w-100" style="background-color: #e3f2fd;">
+      <div class="container navbar-nav">
+      
         <li class="nav-item">
-          <a class="nav-link" href="admin.php">Админ панель</a>
+          <a class="nav-link" href="index.php">Главная</a>
         </li>
-      <? endif; ?>
-
-      <!--<li class="nav-item dropdown">
-
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-          Основные сведенеия
-        </a>  
-
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="about.php">Действие</a></li>
-        </ul>
-
-      </li>-->
-
+  
+        <li class="nav-item">
+          <a class="nav-link" href="news.php">Новости</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="education.php">Образование</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link bg-warning fw-bold" href="head.php">Руководство</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="provision.php">Обеспечение</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="service.php">Платные услуги</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="admission.php">Условия поступления</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="achievements.php">Наши достижения</a>
+        </li>
+  
+        <? if(isset($_SESSION['email'])): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.php">Админ панель</a>
+          </li>
+        <? endif; ?>
+      </div>
+      
     </ul>
   </nav>
 
   <main class="container mb-5">
     <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="card">
+
+          <div class="card-header">
+            <h3>РУКОВОДСТВО. ПЕДАГОГИЧЕСКИЙ СОСТАВ</h3>
+          </div>
+
+          <div class="card-body">
+            <div class="fs-5">
+              Заведующий ДОУ Гребенюк Ольга Сергеевна <br>
+              Старший воспитатель ДОУ Толстунова Оксана Евгеньевна <br>
+              Заместитель заведующего (АХЧ) ДОУ Лопунова Елена Станиславовна <br>
+            </div>
+            Филиалы и представительства отсутствуют <br>
+            Контактный телефон: 8-(39161)-3-42-44 <br>      
+            Адрес электронной почты: mbdou-34@yandex.ru <br><br>   
+            <h5>Воспитатели</h5>
+            <ol>
+              <li>Ваулова Марина Евгеньевна</li>
+              <li>Вяжевич Светлана Александровна</li>
+              <li>Доброхотова Ирина Игнатьевна</li>
+              <li>Жолудева Юлия Валерьевна</li>
+              <li>Ивлева Татьяна николаевна</li>
+              <li>Кашина Светлана Юрьевна</li>
+              <li>Киреева Татьяна Витальевна</li>
+              <li>Курышева Светлана Николевна</li>
+              <li>Лопатина Надежда Михайловна</li>
+              <li>Мемнова Татьяна Николаевна</li>
+              <li>Мкртчян Маргарит Арменовна</li>
+              <li>Полишкевич Олеся Владимировна</li>
+              <li>Резанова Вера Васильевна</li>
+              <li>Романович Елена Ивановна</li>
+              <li>Скуратова Анна Владимировна</li>
+              <li>Танкович Оксана Александровна</li>
+              <li>Темникова Елена Валерьевна</li>
+              <li>Умрихина Анастасия Валерьевна</li>
+              <li>Чиж Лариса Валерьевна</li>
+              <li>Чирцова Анна Игоревна</li>
+              <li>Шапортова Ольга Анатольевна</li>
+            </ol>     
+            <h5>Воспитатель (изодеятельность)</h5>
+            Черепкова Наталья Алексеевна <br><br>     
+            <h5>Музыкальные руководители</h5>
+            Канавцева Ирина Геннадьевна <br>
+            Солодких Евгения Ефимовна <br><br>      
+            <h5>Инструктор по физической культуре</h5>
+            Мясоедова Наталья Сергеевне <br><br>      
+            <h5>Педагоги-психологи</h5>
+            Концевая Оксана Юрьевна (группы общеразвивающей направленности) <br>
+            Васильченко Анастасия Эдуардовна (группы компенсирующей направленности) <br><br>      
+            <h5>Учителя-логопеды</h5>
+            Надымова Наталья Владимировна <br>
+            Дугина Анна Викторовна <br><br>     
+            <h5>Учителя-дефектологи</h5>
+            Абметкина Ирина Николаевна <br>
+            Надымова Наталья Владимировна <br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!--<div class="row justify-content-center">
       <div class="col-11">
         <h3>РУКОВОДСТВО. ПЕДАГОГИЧЕСКИЙ СОСТАВ</h3>
 
@@ -151,26 +207,22 @@
         Абметкина Ирина Николаевна <br>
         Надымова Наталья Владимировна <br>
       </div>
-      
-      <div class="col-2 mt-3 mb-3">
-        <a href="admin.php" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Я администратор</a>
-      </div>
-      <div class="col-10"></div>
 
-    </div>
+    </div>-->
   </main>
 
-  <footer class="d-flex justify-space-between text-center text-secondary w-100">
-    <div class="w-25">
-      МБДОУ №34 "Ромашка"© 2023
+  <footer class="d-flex justify-content-space-between w-100 text-center">
+    <div class="col-3">
+      МБДОУ №34 "Ромашка"© 2023 <br>
+      <a href="admin.php" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Я администратор</a>
     </div>
-    <div class="w-25">
+    <div class="col-3">
       г. Канск, пер. Индустриальный, 4
     </div>
-    <div class="w-25">
+    <div class="col-3">
       mbdou-34@yandex.ru
     </div>
-    <div class="w-25">
+    <div class="col-3">
       8-(39161)-3-42-44
     </div>
   </footer>

@@ -29,7 +29,6 @@ if (isset($_GET['delete'])) {
 <body class="position-relative">
   
   <div class="top w-100"></div>
-  <div class="bot w-100"></div>
 
   <header class="container">
     <div class="row justify-space-between">
@@ -47,47 +46,49 @@ if (isset($_GET['delete'])) {
     </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary container">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Главная</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link active" href="news.php">Новости</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="education.php">Образование</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="head.php">Руководство</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="provision.php">Обеспечение</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="service.php">Платные услуги</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="admission.php">Условия поступления</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="achievements.php">Наши достижения</a>
-      </li>
-
-      <? if(isset($_SESSION['email'])): ?>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <ul class="me-auto mb-2 mb-lg-0 w-100" style="background-color: #e3f2fd;">
+      <div class="container navbar-nav">
+      
         <li class="nav-item">
-          <a class="nav-link active" href="achievements.php">Админ-панель</a>
+          <a class="nav-link" href="index.php">Главная</a>
         </li>
-      <? endif; ?>
-
+  
+        <li class="nav-item">
+          <a class="nav-link bg-warning fw-bold" href="news.php">Новости</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="education.php">Образование</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="head.php">Руководство</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="provision.php">Обеспечение</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="service.php">Платные услуги</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="admission.php">Условия поступления</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="achievements.php">Наши достижения</a>
+        </li>
+  
+        <? if(isset($_SESSION['email'])): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.php">Админ панель</a>
+          </li>
+        <? endif; ?>
+      </div>
+      
     </ul>
   </nav>
 
@@ -98,7 +99,7 @@ if (isset($_GET['delete'])) {
       <? while($row = mysqli_fetch_assoc($result)): ?>
         <? if($_GET['delete'] != $row['id']): ?>
           <div class="col-8 mb-4">
-            <div class=" card">
+            <div class="card">
               <div class="card-header fs-3">
               <?= $row['title'] ?>
               </div>
@@ -121,27 +122,22 @@ if (isset($_GET['delete'])) {
     <? endif; ?>
 
     </div>
-
-    <div class="col-2 mb-3">
-      <a href="admin.php" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Я администратор</a>
-    </div>
-    <div class="col-10"></div>
-
   </main>
 
-  <footer class="d-flex justify-space-between text-center text-secondary w-100">
-    <div class="w-25">
-      МБДОУ №34 "Ромашка"© 2023
-    </div>
-    <div class="w-25">
-      г. Канск, пер. Индустриальный, 4
-    </div>
-    <div class="w-25">
-      mbdou-34@yandex.ru
-    </div>
-    <div class="w-25">
-      8-(39161)-3-42-44
-    </div>
+  <footer class="d-flex justify-content-space-between w-100 text-center">
+      <div class="col-3">
+        МБДОУ №34 "Ромашка"© 2023 <br>
+        <a href="admin.php" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Я администратор</a>
+      </div>
+      <div class="col-3">
+        г. Канск, пер. Индустриальный, 4
+      </div>
+      <div class="col-3">
+        mbdou-34@yandex.ru
+      </div>
+      <div class="col-3">
+        8-(39161)-3-42-44
+      </div>
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

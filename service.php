@@ -12,7 +12,6 @@
 <body class="position-relative">
   
   <div class="top w-100"></div>
-  <div class="bot w-100"></div>
 
   <header class="container">
     <div class="row justify-space-between">
@@ -30,52 +29,70 @@
     </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary container">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Главная</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="news.php">Новости</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="education.php">Образование</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="head.php">Руководство</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="provision.php">Обеспечение</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link active" href="service.php">Платные услуги</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="admission.php">Условия поступления</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="achievements.php">Наши достижения</a>
-      </li>
-
-      <? if(isset($_SESSION['email'])): ?>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <ul class="me-auto mb-2 mb-lg-0 w-100" style="background-color: #e3f2fd;">
+      <div class="container navbar-nav">
+      
         <li class="nav-item">
-          <a class="nav-link" href="admin.php">Админ панель</a>
+          <a class="nav-link" href="index.php">Главная</a>
         </li>
-      <? endif; ?>
-
+  
+        <li class="nav-item">
+          <a class="nav-link" href="news.php">Новости</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="education.php">Образование</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="head.php">Руководство</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="provision.php">Обеспечение</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link bg-warning fw-bold" href="service.php">Платные услуги</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="admission.php">Условия поступления</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="achievements.php">Наши достижения</a>
+        </li>
+  
+        <? if(isset($_SESSION['email'])): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.php">Админ панель</a>
+          </li>
+        <? endif; ?>
+      </div>
+      
     </ul>
   </nav>
 
   <main class="container mb-5">
     <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="card">
+
+          <div class="card-header">
+            <h3>Платные образовательные услуги МБДОУ</h3>
+          </div>
+          
+          <div class="card-body">
+            <a href="assets/resources/service1.pdf" download>ПОЛОЖЕНИЕ ОБ ОКАЗАНИИ ПЛАТНЫХ УСЛУГ В МБДОУ № 34</a><br>
+            <a href="assets/resources/service2.pdf" download>ОБРАЗЕЦ ДОГОВОРА ОБ ОКАЗАНИИ ПЛАТНЫХ ОБРАЗОВАТЕЛЬНЫХ УСЛУГ</a><br>
+            <a href="assets/resources/service3.pdf" download>СТОИМОСТЬ ОБУЧЕНИЯ ПО КАЖДОЙ ОБРАЗОВАТЕЛЬНОЙ ПРОГРАММЕ</a><br>
+          </div>
+
+
+
+    <!--<div class="row justify-content-center">
       <div class="col-11">
 
         <h3>Платные образовательные услуги МБДОУ</h3>
@@ -86,20 +103,21 @@
 
       </div>
 
-    </div>
+    </div>-->
   </main>
 
-  <footer class="d-flex justify-space-between text-center text-secondary w-100">
-    <div class="w-25">
-      МБДОУ №34 "Ромашка"© 2023
+  <footer class="d-flex justify-content-space-between w-100 text-center position-absolute bottom-0">
+    <div class="col-3">
+      МБДОУ №34 "Ромашка"© 2023 <br>
+      <a href="admin.php" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Я администратор</a>
     </div>
-    <div class="w-25">
+    <div class="col-3">
       г. Канск, пер. Индустриальный, 4
     </div>
-    <div class="w-25">
+    <div class="col-3">
       mbdou-34@yandex.ru
     </div>
-    <div class="w-25">
+    <div class="col-3">
       8-(39161)-3-42-44
     </div>
   </footer>

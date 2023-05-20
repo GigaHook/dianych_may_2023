@@ -51,7 +51,6 @@ if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) 
 <body class="position-relative">
   
   <div class="top w-100"></div>
-  <div class="bot w-100"></div>
 
   <header class="container">
     <div class="row justify-space-between">
@@ -69,59 +68,49 @@ if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) 
     </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary container">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Главная</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="news.php">Новости</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="education.php">Образование</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="head.php">Руководство</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="provision.php">Обеспечение</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="service.php">Платные услуги</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="admission.php">Условия поступления</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="achievements.php">Наши достижения</a>
-      </li>
-
-      <? if(isset($_SESSION['email'])): ?>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <ul class="me-auto mb-2 mb-lg-0 w-100" style="background-color: #e3f2fd;">
+      <div class="container navbar-nav">
+      
         <li class="nav-item">
-          <a class="nav-link active" href="achievements.php">Админ-панель</a>
+          <a class="nav-link" href="index.php">Главная</a>
         </li>
-      <? endif; ?>
-
-      <!--<li class="nav-item dropdown">
-
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-          Основные сведенеия
-        </a>  
-
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="about.php">Действие</a></li>
-        </ul>
-
-      </li>-->
-
+  
+        <li class="nav-item">
+          <a class="nav-link" href="news.php">Новости</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="education.php">Образование</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="head.php">Руководство</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="provision.php">Обеспечение</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="service.php">Платные услуги</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="admission.php">Условия поступления</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="achievements.php">Наши достижения</a>
+        </li>
+  
+        <? if(isset($_SESSION['email'])): ?>
+          <li class="nav-item">
+            <a class="nav-link bg-warning fw-bold" href="admin.php">Админ панель</a>
+          </li>
+        <? endif; ?>
+      </div>
+      
     </ul>
   </nav>
 
@@ -190,17 +179,17 @@ if (isset($_POST['title']) && isset($_POST['text']) && isset($_FILES['image'])) 
     </div>
   </main>
 
-  <footer class="d-flex justify-space-between text-center text-secondary w-100">
-    <div class="w-25">
-      МБДОУ №34 "Ромашка"© 2023
+  <footer class="d-flex justify-content-space-between w-100 text-center position-absolute bottom-0">
+    <div class="col-3">
+      МБДОУ №34 "Ромашка"© 2023 <br>
     </div>
-    <div class="w-25">
+    <div class="col-3">
       г. Канск, пер. Индустриальный, 4
     </div>
-    <div class="w-25">
+    <div class="col-3">
       mbdou-34@yandex.ru
     </div>
-    <div class="w-25">
+    <div class="col-3">
       8-(39161)-3-42-44
     </div>
   </footer>
